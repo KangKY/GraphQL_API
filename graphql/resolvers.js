@@ -1,13 +1,9 @@
-const personFrame = {
-    name : "kki",
-    age : 18,
-    gender : "male"
-}
-
+import {getMovies, getById, deleteMovie} from './db';
 
 const resolvers = {
     Query:{
-        person:() => personFrame
+        movies:() => getMovies(),
+        movie:(_, {id}) => getById(id)
     }
 }
 
